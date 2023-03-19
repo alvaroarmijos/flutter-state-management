@@ -6,6 +6,7 @@ import 'package:state_management/mobx/pages/mobx_page.dart';
 import 'package:state_management/provider/pages/provider_page.dart';
 
 import 'riverpod/pages/riverpod_page.dart';
+import 'rx_bloc/pages/bloc_page.dart';
 
 void main() => runApp(const MyApp());
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       navigatorKey: navigatorKey,
       routes: {
         BlocPage.route: (_) => const BlocPage(),
+        RxBlocPage.route: (_) => const RxBlocPage(),
         ProviderPage.route: (_) => const ProviderPage(),
         GetXPage.route: (_) => const GetXPage(),
         RiverpodPage.route: (_) => const RiverpodPage(),
@@ -49,6 +51,11 @@ class Home extends StatelessWidget {
               trailing: const Icon(Icons.navigate_next),
               title: const Text('BLoC'),
               onTap: () => Navigator.pushNamed(context, BlocPage.route),
+            ),
+            ListTile(
+              trailing: const Icon(Icons.navigate_next),
+              title: const Text('Rx BLoC'),
+              onTap: () => Navigator.pushNamed(context, RxBlocPage.route),
             ),
             ListTile(
               trailing: const Icon(Icons.navigate_next),
